@@ -1,1 +1,43 @@
 
+# Automatic Milk Analyser
+
+farmer_name = "Ravi"
+fat = 4.25
+snf = 8.50
+quantity = 100
+season = "April-June"
+ten_day_quantity = 600
+
+# Seasonal base rate
+if season == "April-June":
+    base_rate = 32.00
+else:
+    base_rate = 34.00
+
+# Calculate milk rate
+fat_value = fat * 0.45
+milk_rate = base_rate + fat_value
+
+# Calculate bonus
+if ten_day_quantity > 500:
+    bonus = 0.50
+else:
+    bonus = 0.00
+
+# Final payment
+final_rate = round(milk_rate + bonus, 2)
+total_payment = round((milk_rate + bonus) * quantity, 2)
+
+# Display output
+print("AUTOMATIC MILK ANALYSER")
+print("-----------------------")
+print("Farmer Name:", farmer_name)
+print("Fat:", fat)
+print("SNF:", snf)
+print("Quantity:", quantity, "Litres")
+print("Season:", season)
+print("Base Rate: Rs.", base_rate)
+print("Fat Value: Rs.", fat_value)
+print("Bonus: Rs.", bonus)
+print("Final Rate: Rs.", final_rate)
+print("Total Payment: Rs.", total_payment)
